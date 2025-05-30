@@ -1,0 +1,568 @@
+[
+  {
+    "ContainingType": "bankApI.Controllers.AuthorizationController",
+    "Method": "CheckAuth",
+    "RelativePath": "api/Authorization/check-auth",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "bankApI.Controllers.AuthorizationController",
+    "Method": "Login",
+    "RelativePath": "api/Authorization/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "login",
+        "Type": "bankApI.BusinessLayer.Dto_s.ClientXEmployeeDto_s.DSignIn",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "bankApI.Controllers.ClientController.ClientController",
+    "Method": "AddNewAccountAsync",
+    "RelativePath": "api/Client/AddAccount",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "bankApI.BusinessLayer.Dto_s.DBankEmail",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "bankApI.BusinessLayer.Dto_s.DAccountGet",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "bankApI.Controllers.ClientController.ClientController",
+    "Method": "AddGetHelpRequistAsync",
+    "RelativePath": "api/Client/AddGetHelpRequist",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "state",
+        "Type": "bankApI.BusinessLayer.Dto_s.DCNotifications",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "bankApI.Controllers.ClientController.ClientController",
+    "Method": "FreezeUnfreezeClientAccountAsync",
+    "RelativePath": "api/Client/FreezeUnfreezeClientAccount",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "state",
+        "Type": "bankApI.BusinessLayer.Dto_s.DSetEmailState",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "bankApI.Controllers.ClientController.ClientController",
+    "Method": "GetAllClientsAsync",
+    "RelativePath": "api/Client/GetAllClients",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[bankApI.BusinessLayer.Dto_s.DPersonClientG, bankApI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "bankApI.Controllers.ClientController.ClientController",
+    "Method": "GetAllAccountsAsync",
+    "RelativePath": "api/Client/GetAllClientsAccounts",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[bankApI.BusinessLayer.Dto_s.DGetEmails, bankApI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "bankApI.Controllers.ClientController.ClientController",
+    "Method": "GetClientByIdAsync",
+    "RelativePath": "api/Client/GetClientById{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "bankApI.BusinessLayer.Dto_s.DPersonClientG",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "bankApI.Controllers.ClientController.ClientController",
+    "Method": "GetClientInfo",
+    "RelativePath": "api/Client/GetClientInfo",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "bankApI.BusinessLayer.Dto_s.DPersonClientG",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "bankApI.Controllers.ClientController.ClientController",
+    "Method": "SendMessageToClientAccount",
+    "RelativePath": "api/Client/SendMessageToClientAccount",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "bankApI.BusinessLayer.Dto_s.DBankEmail",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "bankApI.Controllers.ClientController.ClientController",
+    "Method": "UpdateClientByIdAsync",
+    "RelativePath": "api/Client/UpdateClient",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "client",
+        "Type": "bankApI.BusinessLayer.Dto_s.DUpdateClient",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "bankApI.Controllers.ClientController.NotificationsController.CNotificationsController",
+    "Method": "GetClientNotifications",
+    "RelativePath": "api/CNotifications/GetClientNotifications/{AccountId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "AccountId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.Stack\u00601[[bankApI.BusinessLayer.Dto_s.ClientDto_s.DCNotificationsGet, bankApI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "bankApI.Controllers.ClientController.NotificationsController.CNotificationsController",
+    "Method": "SetIsviewed",
+    "RelativePath": "api/CNotifications/UpdateIsNotificationviewed/{Notificationid}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Notificationid",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "bankApI.Controllers.EmployeeController.EmployeeController",
+    "Method": "AddEmployeeAsync",
+    "RelativePath": "api/Employee/AddNewEmployee",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "employee",
+        "Type": "bankApI.BusinessLayer.Dto_s.DEmployeePerson",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "bankApI.BusinessLayer.Dto_s.DGetEmployee",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "bankApI.Controllers.EmployeeController.EmployeeController",
+    "Method": "GetAllTransactionsAsync",
+    "RelativePath": "api/Employee/EGetAllTransactions",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "bankApI.BusinessLayer.Dto_s.EmployeeDto_s.DGetResentTransactions",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "bankApI.Controllers.EmployeeController.EmployeeController",
+    "Method": "FreezeUnfreezeEmployeeAccountAsync",
+    "RelativePath": "api/Employee/FreezeUnfreezeEmployeeAccount",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "state",
+        "Type": "bankApI.BusinessLayer.Dto_s.DSetEmailState",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "bankApI.Controllers.EmployeeController.EmployeeController",
+    "Method": "GetAllEmployeesInfos",
+    "RelativePath": "api/Employee/GetAllEmployeesInfos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[bankApI.BusinessLayer.Dto_s.EmployeeDto_s.DGetEmployeeInfos, bankApI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "bankApI.Controllers.EmployeeController.EmployeeController",
+    "Method": "GetCardsInfoAsync",
+    "RelativePath": "api/Employee/GetCardsInfo",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "bankApI.BusinessLayer.Dto_s.EmployeeDto_s.DGetCardsInfo",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "bankApI.Controllers.EmployeeController.EmployeeController",
+    "Method": "GetEmployeeInfo",
+    "RelativePath": "api/Employee/GetEmployeeInfo",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "bankApI.BusinessLayer.Dto_s.EmployeeDto_s.DGetEmployeeInfos",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "bankApI.Controllers.EmployeeController.EmployeeController",
+    "Method": "SendMessageToEmployee",
+    "RelativePath": "api/Employee/SendMessageToEmployee",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "bankApI.BusinessLayer.Dto_s.EmployeeDto_s.DENotifications",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "bankApI.Controllers.EmployeeController.EmployeeController",
+    "Method": "UpdateClientByIdAsync",
+    "RelativePath": "api/Employee/UpdateEmployee",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "EmployeeInfos",
+        "Type": "bankApI.BusinessLayer.Dto_s.EmployeeDto_s.DUpdateEmployee",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "bankApI.Controllers.EmployeeController.ENotificationsController.ENotificationsController",
+    "Method": "GetClientNotifications",
+    "RelativePath": "api/ENotifications/GetEmployeeNotifications/{AccountId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "AccountId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.Stack\u00601[[bankApI.BusinessLayer.Dto_s.ClientDto_s.DCNotificationsGet, bankApI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "bankApI.Controllers.EmployeeController.ENotificationsController.ENotificationsController",
+    "Method": "SetIsviewed",
+    "RelativePath": "api/ENotifications/UpdateIsEmployeeNotificationviewed",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "info",
+        "Type": "bankApI.BusinessLayer.Dto_s.ClientXEmployeeDto_s.DSetIsNotificationV",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "bankApI.Controllers.EmployeeController.ManageClientsController",
+    "Method": "AddClientNotification",
+    "RelativePath": "api/ManageClients/AddClientNotification",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "n",
+        "Type": "bankApI.BusinessLayer.Dto_s.DCNotifications",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "bankApI.Controllers.EmployeeController.ManageClientsController",
+    "Method": "AddNewClientAsync",
+    "RelativePath": "api/ManageClients/AddNewClient",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "client",
+        "Type": "bankApI.BusinessLayer.Dto_s.DPersonClientS",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "bankApI.Controllers.EmployeeController.ManageClientsController",
+    "Method": "Deposit",
+    "RelativePath": "api/ManageClients/Deposit",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "depositinfos",
+        "Type": "bankApI.BusinessLayer.Dto_s.EmployeeDto_s.DDepositWithdraw",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "bankApI.Controllers.EmployeeController.ManageClientsController",
+    "Method": "Withdraw",
+    "RelativePath": "api/ManageClients/Withdraw",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "withdrawinfos",
+        "Type": "bankApI.BusinessLayer.Dto_s.EmployeeDto_s.DDepositWithdraw",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "bankApI.Controllers.ClientController.Transactions.TransactionsHistoryController",
+    "Method": "GetTransactionHistoryById",
+    "RelativePath": "api/TransactionsHistory/GetTransactionHistoryById{AccountId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "AccountId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[bankApI.BusinessLayer.Dto_s.ClientDto_s.DTransactionsHistory.DGetTransactionsHistory, bankApI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "bankApI.Controllers.ClientController.Transactions.TransactionsHistoryController",
+    "Method": "TransferFundAsync",
+    "RelativePath": "api/TransactionsHistory/TransferFund",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "infos",
+        "Type": "bankApI.BusinessLayer.Dto_s.ClientDto_s.DTransactionsHistory.DSetTransferFund",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  }
+]

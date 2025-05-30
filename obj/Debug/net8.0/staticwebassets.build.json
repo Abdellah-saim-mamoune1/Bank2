@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "VZfBb0xHm83OI4lxR1D6Ey71ALSz+80wpFB/p20tztE=",
+  "Source": "bankApI",
+  "BasePath": "_content/bankApI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
