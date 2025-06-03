@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\TADJ TECH\\source\\repos\\bankApI\\bankApI.csproj": {}
+    "C:\\Users\\TADJ TECH\\Desktop\\BankProject\\bankApI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\TADJ TECH\\source\\repos\\bankApI\\bankApI.csproj": {
+    "C:\\Users\\TADJ TECH\\Desktop\\BankProject\\bankApI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\TADJ TECH\\source\\repos\\bankApI\\bankApI.csproj",
+        "projectUniqueName": "C:\\Users\\TADJ TECH\\Desktop\\BankProject\\bankApI.csproj",
         "projectName": "bankApI",
-        "projectPath": "C:\\Users\\TADJ TECH\\source\\repos\\bankApI\\bankApI.csproj",
+        "projectPath": "C:\\Users\\TADJ TECH\\Desktop\\BankProject\\bankApI.csproj",
         "packagesPath": "C:\\Users\\TADJ TECH\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\TADJ TECH\\source\\repos\\bankApI\\obj\\",
+        "outputPath": "C:\\Users\\TADJ TECH\\Desktop\\BankProject\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -56,15 +56,11 @@
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[9.0.2, )"
+              "version": "[9.0.5, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
-              "target": "Package",
-              "version": "[9.0.2, )"
-            },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[9.0.2, )"
             },
@@ -73,6 +69,14 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[9.0.2, )"
+            },
+            "Npgsql": {
+              "target": "Package",
+              "version": "[9.0.3, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[9.0.4, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

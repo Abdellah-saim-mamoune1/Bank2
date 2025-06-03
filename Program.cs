@@ -27,7 +27,7 @@ builder.Services.AddScoped<IENotifications, ENotificationsService>();
 
 // ? Database
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // ? JWT Authentication setup
 var key = Encoding.UTF8.GetBytes("thisIsAReallyStrongSecretKey1234567890");

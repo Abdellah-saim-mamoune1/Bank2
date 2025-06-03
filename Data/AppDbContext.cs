@@ -156,21 +156,21 @@ namespace bankApI.Data
 
             modelBuilder.Entity<Employee>()
 .Property(l => l.CreatedAt)
-.HasDefaultValueSql("GETDATE()");
+.HasDefaultValueSql("CURRENT_DATE");
 
             modelBuilder.Entity<TransactionsHistory>()
 .Property(l => l.Date)
-.HasDefaultValueSql("GETDATE()");
+.HasDefaultValueSql("CURRENT_DATE");
 
             modelBuilder.Entity<GetHelp>()
 .Property(l => l.Date)
-.HasDefaultValueSql("GETDATE()");
+.HasDefaultValueSql("CURRENT_DATE");
 
         
 
             modelBuilder.Entity<TransferFundHistory>()
      .Property(l => l.Date)
-     .HasDefaultValueSql("GETDATE()");
+     .HasDefaultValueSql("CURRENT_DATE");
 
           
 
@@ -181,17 +181,17 @@ namespace bankApI.Data
 
             modelBuilder.Entity<Client>()
 .Property(l => l.CreatedAt)
-.HasDefaultValueSql("GETDATE()");
+.HasDefaultValueSql("CURRENT_DATE");
 
             modelBuilder.Entity<Account>()
 .Property(l => l.CreatedAt)
-.HasDefaultValueSql("GETDATE()");
+.HasDefaultValueSql("CURRENT_DATE");
 
            
 
             modelBuilder.Entity<TransactionsRegistre>()
     .Property(l => l.Date)
-    .HasDefaultValueSql("GETDATE()");
+    .HasDefaultValueSql("CURRENT_DATE");
 
 
 
@@ -203,21 +203,21 @@ namespace bankApI.Data
 
             modelBuilder.Entity<TransactionRegistre>()
     .Property(l => l.Date)
-    .HasDefaultValueSql("GETDATE()");
+    .HasDefaultValueSql("CURRENT_DATE");
 
 
             modelBuilder.Entity<LoginRegistre>()
 .Property(l => l.Date)
-.HasDefaultValueSql("GETDATE()");
+.HasDefaultValueSql("CURRENT_DATE");
 
 
             modelBuilder.Entity<ClientXNotifications>()
 .Property(l => l.Date)
-.HasDefaultValueSql("GETDATE()");
+.HasDefaultValueSql("CURRENT_DATE");
 
             modelBuilder.Entity<EmployeeNotifications>()
 .Property(l => l.Date)
-.HasDefaultValueSql("GETDATE()");
+.HasDefaultValueSql("CURRENT_DATE");
 
 
 

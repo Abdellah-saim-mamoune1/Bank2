@@ -2,8 +2,6 @@
 using bankApI.BusinessLayer.Services.ClientServer.IClient;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Identity.Client;
-
 namespace bankApI.Controllers.ClientController.Transactions
 {
     [Route("api/[controller]")]
