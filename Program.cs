@@ -69,7 +69,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowReactApp",
         policy =>
         {
-            policy.WithOrigins("https://your-deployed-frontend.com")
+            policy.WithOrigins("https://nova-umber-tau.vercel.app")
                   .AllowCredentials()
                   .AllowAnyHeader()
                   .AllowAnyMethod();
