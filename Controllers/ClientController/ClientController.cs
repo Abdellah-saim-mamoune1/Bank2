@@ -130,7 +130,7 @@ namespace bankApI.Controllers.ClientController
         [HttpGet("GetClientInfo")]
         public async Task<ActionResult<DPersonClientG>> GetClientInfo()
         {
-           // var clientId = User.FindFirst(ClaimTypes.Email)?.Value;
+            var clientId = User.FindFirst(ClaimTypes.Email)?.Value;
 
           //  if (clientId == null)
                // return Unauthorized();
