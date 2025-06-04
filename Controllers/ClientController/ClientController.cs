@@ -126,14 +126,14 @@ namespace bankApI.Controllers.ClientController
 
 
 
-      //  [Authorize]
+        [Authorize]
         [HttpGet("GetClientInfo")]
         public async Task<ActionResult<DPersonClientG>> GetClientInfo()
         {
             var clientId = User.FindFirst(ClaimTypes.Email)?.Value;
 
-          //  if (clientId == null)
-               // return Unauthorized();
+            if (clientId == null)
+             return Unauthorized();
 
             var clientinfos = await _ClientService.GetClientInfo(clientId);
             if (clientinfos == null)
