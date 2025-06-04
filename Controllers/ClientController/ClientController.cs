@@ -132,14 +132,14 @@ namespace bankApI.Controllers.ClientController
         {
             var clientId = User.FindFirst(ClaimTypes.Email)?.Value;
 
-            if (clientId == null)
-                return Unauthorized();
+           // if (clientId == null)
+                return Unauthorized("hi there");
 
-            var clientinfos = await _ClientService.GetClientInfo(clientId);
-            if (clientinfos == null)
-                return NotFound();
+           // var clientinfos = await _ClientService.GetClientInfo(clientId);
+           // if (clientinfos == null)
+             //   return NotFound();
 
-            return Ok(clientinfos);
+           // return Ok(clientinfos);
         }
 
 
