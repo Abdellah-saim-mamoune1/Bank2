@@ -12,7 +12,7 @@ namespace bankApI.Controllers.ClientController
     [ApiController]
     public class ClientController : ControllerBase
     {
-        DbContext _db;
+       
         IClientService _ClientService;
 
         public ClientController(IClientService ClientService)
