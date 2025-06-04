@@ -8,7 +8,7 @@ namespace bankApI.BusinessLayer.Services.SClient.IClient
     {
             public Task<IEnumerable<DPersonClientG>> GetAllClientsAsync();
             public Task<DPersonClientG> GetClientByIdAsync(int id);
-        public Task<DPersonClientG> GetClientInfo(string clientId);
+        public Task<DPersonClientG?> GetClientInfo(string clientId);
         
 
 
