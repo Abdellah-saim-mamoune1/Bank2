@@ -63,38 +63,35 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 builder.Services.AddAuthorization();
 
-// CORS configuration - allow localhost and deployed frontend only
+// CORS configuration - allow only your deployed frontend domain
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowReactApp",
         policy =>
         {
-            policy.WithOrigins(
-                "http://localhost:5173",
-                "https://nova-umber-tau.vercel.app/"  // <-- Replace with your deployed frontend URL
-            )
-            .AllowCredentials()
-            .AllowAnyHeader()
-            .AllowAnyMethod();
+            policy.WithOrigins("https://your-deployed-frontend.com")
+                  .AllowCredentials()
+                  .AllowAnyHeader()
+                  .AllowAnyMethod();
         });
 });
 
 var app = builder.Build();
 
-// Middleware
-app.UseHttpsRedirection();
+// Enable HTTPS redirection **only in development** to avoid the warning on Render
+if (app.Environment.IsDevelopment())
+{
+    app.UseHttpsRedirection();
+
+    // Enable Swagger only in development
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
 
 app.UseCors("AllowReactApp");
 
 app.UseAuthentication();
 app.UseAuthorization();
-
-// Swagger for development
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
 
 app.MapControllers();
 
