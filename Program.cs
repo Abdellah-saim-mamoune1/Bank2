@@ -71,7 +71,7 @@ builder.Services.AddCors(options =>
         {
             policy.WithOrigins(
                 "http://localhost:5173",
-                "https://your-frontend-domain.com"  // <-- Replace with your deployed frontend URL
+                "https://nova-umber-tau.vercel.app"  // <-- Replace with your deployed frontend URL
             )
             .AllowCredentials()
             .AllowAnyHeader()
