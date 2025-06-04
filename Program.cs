@@ -12,12 +12,12 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container
+// Add services to the container.
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// Dependency Injection
+// Inject services
 builder.Services.AddScoped<IClientService, ClientService>();
 builder.Services.AddScoped<IEmployeeService, EmployeeService>();
 builder.Services.AddScoped<IClientNotifications, TheNotificatinsService>();
@@ -25,7 +25,7 @@ builder.Services.AddScoped<ITransactionsHistory, TransactionsHistoryService>();
 builder.Services.AddScoped<IClientsManagement, ClientsManagementService>();
 builder.Services.AddScoped<IENotifications, ENotificationsService>();
 
-// Database configuration
+// Database
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
@@ -46,6 +46,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             IssuerSigningKey = new SymmetricSecurityKey(key)
         };
 
+        // Allow reading token from cookie
         options.Events = new JwtBearerEvents
         {
             OnMessageReceived = context =>
@@ -62,29 +63,33 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 builder.Services.AddAuthorization();
 
-// ✅ CORS configuration — allow React frontend only
+// CORS configuration - allow localhost and deployed frontend only
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowReactApp", policy =>
-    {
-        policy.WithOrigins("http://localhost:5173")
-              .AllowAnyHeader()
-              .AllowAnyMethod()
-              .AllowCredentials();
-    });
+    options.AddPolicy("AllowReactApp",
+        policy =>
+        {
+            policy.WithOrigins(
+                "http://localhost:5173",
+                "https://your-frontend-domain.com"  // <-- Replace with your deployed frontend URL
+            )
+            .AllowCredentials()
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+        });
 });
 
 var app = builder.Build();
 
-// ✅ Apply CORS before authentication and authorization
-app.UseCors("AllowReactApp");
-
+// Middleware
 app.UseHttpsRedirection();
+
+app.UseCors("AllowReactApp");
 
 app.UseAuthentication();
 app.UseAuthorization();
 
-// Swagger only in Development
+// Swagger for development
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
