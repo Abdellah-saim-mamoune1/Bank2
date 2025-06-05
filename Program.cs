@@ -12,10 +12,14 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Add services to the container
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+// Database
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Inject services
 builder.Services.AddScoped<IClientService, ClientService>();
@@ -24,10 +28,6 @@ builder.Services.AddScoped<IClientNotifications, TheNotificatinsService>();
 builder.Services.AddScoped<ITransactionsHistory, TransactionsHistoryService>();
 builder.Services.AddScoped<IClientsManagement, ClientsManagementService>();
 builder.Services.AddScoped<IENotifications, ENotificationsService>();
-
-// Database
-builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // JWT Authentication setup
 var key = Encoding.UTF8.GetBytes("thisIsAReallyStrongSecretKey1234567890");
@@ -46,7 +46,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             IssuerSigningKey = new SymmetricSecurityKey(key)
         };
 
-        // Allow reading token from cookie
+        // Read token from cookies
         options.Events = new JwtBearerEvents
         {
             OnMessageReceived = context =>
@@ -63,32 +63,32 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 builder.Services.AddAuthorization();
 
-// CORS configuration - allow only your deployed frontend domain
+// CORS configuration - allow only Vercel frontend
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowReactApp",
-        policy =>
-        {
-            policy.WithOrigins("https://nova-umber-tau.vercel.app")
-                  .AllowCredentials()
-                  .AllowAnyHeader()
-                  .AllowAnyMethod();
-        });
+    options.AddPolicy("AllowReactApp", policy =>
+    {
+        policy.WithOrigins("https://nova-umber-tau.vercel.app")
+              .AllowAnyHeader()
+              .AllowAnyMethod()
+              .AllowCredentials(); // Required for cookies
+    });
 });
 
 var app = builder.Build();
 
-// Enable HTTPS redirection **only in development** to avoid the warning on Render
+// Enable Swagger only in development
 if (app.Environment.IsDevelopment())
 {
-    app.UseHttpsRedirection();
-
-    // Enable Swagger only in development
     app.UseSwagger();
     app.UseSwaggerUI();
 }
 
+// Enable CORS BEFORE authentication
 app.UseCors("AllowReactApp");
+
+// HTTPS redirection (optional on Render)
+app.UseHttpsRedirection();
 
 app.UseAuthentication();
 app.UseAuthorization();
