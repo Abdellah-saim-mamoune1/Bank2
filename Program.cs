@@ -74,6 +74,8 @@ builder.Services.AddCors(options =>
               .AllowCredentials(); // Required for cookies
     });
 });
+var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
+builder.WebHost.UseUrls($"http://*:{port}");
 
 var app = builder.Build();
 
@@ -88,7 +90,7 @@ if (app.Environment.IsDevelopment())
 app.UseCors("AllowReactApp");
 
 // HTTPS redirection (optional on Render)
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 
 app.UseAuthentication();
 app.UseAuthorization();
